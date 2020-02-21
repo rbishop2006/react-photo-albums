@@ -1,45 +1,48 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import "../styles/AlbumName.css"
+import { getInstrument, getInstruments } from "../actions/Instruments"
 
 export default function(props) {
+  const [instrument, setInstrument] = useState({})
+  const [pictures, setPictures] = useState([])
+  const [instruments, setInstruments] = useState([])
+
+  useEffect(() => {
+    getInstrument(props.match.params.id).then(instrument => {
+      setInstrument(instrument)
+      setPictures(instrument.pictures)
+    })
+    getInstruments().then(data => setInstruments(data))
+  }, [props.match.params])
+
   return (
     <div className="wrapperAlbumName">
-      <header>My Albums</header>
+      <header>{instrument.name}</header>
       <div className="flexSect">
-        <div className="sidebar">
-          <p className="albumNums">Album 1</p>
-          <p className="albumNums">Album 2</p>
-          <p className="albumNums">Album 3</p>
-          <p className="albumNums">Album 4</p>
-          <p className="albumNums">Album 5</p>
-          <p className="albumNums">Album 6</p>
+        <div className="albumGroups">
+          {instruments.map(instrument => {
+            return (
+              <div className="sidebar">
+                <Link to={"/album/" + instrument.id}>
+                  <p className="albumNums">{instrument.name}</p>
+                </Link>
+              </div>
+            )
+          })}{" "}
         </div>
+
         <div className="picDisplay">
-          <div className="photos">
-            <img src="http://placehold.it/200" />
-            <p>Pic Name</p>
-          </div>
-          <div className="photos">
-            <img src="http://placehold.it/200" />
-            <p>Pic Name</p>
-          </div>
-          <div className="photos">
-            <img src="http://placehold.it/200" />
-            <p>Pic Name</p>
-          </div>
-          <div className="photos">
-            <img src="http://placehold.it/200" />
-            <p>Pic Name</p>
-          </div>
-          <div className="photos">
-            <img src="http://placehold.it/200" />
-            <p>Pic Name</p>
-          </div>
-          <div className="photos">
-            <img src="http://placehold.it/200" />
-            <p>Pic Name</p>
-          </div>
+          {pictures.map(picture => {
+            return (
+              <Link to={"/pic/" + picture.id}>
+                <div key={"picture" + picture.id} className="photos">
+                  <img src={picture.url} />
+                  <p>{picture.name}</p>
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </div>
     </div>

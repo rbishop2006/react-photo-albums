@@ -21,3 +21,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
+p {
+  text-transform: capitalize;
+}
+header {
+  text-transform: capitalize;
+}

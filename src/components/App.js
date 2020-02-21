@@ -8,8 +8,8 @@ export default props => (
   <Router>
     <div>
       <Route exact path="/" component={MyAlbums} />
-      <Route exact path="/album/:id" component={AlbumName} />
-      <Route path="/album/pic/:id" component={PicName} />
+      <Route path="/album/:id" component={AlbumName} />
+      <Route path="/pic/:id" component={PicName} />
     </div>
   </Router>
 )

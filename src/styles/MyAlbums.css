@@ -24,6 +24,8 @@
 }
 .gridAlbums img {
   border-bottom: 1px solid black;
+  width: 250px;
+  height: 150px;
 }
 .gridAlbums .covers {
   justify-self: center;

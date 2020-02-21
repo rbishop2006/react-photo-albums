@@ -4,6 +4,7 @@
   border: 1px solid black;
   display: grid;
   justify-content: center;
+  position: relative;
 }
 .wrapperPicName header {
   height: 125px;
@@ -19,4 +20,18 @@
 .viewingPic {
   justify-self: center;
   padding: 60px;
+}
+.viewingPic img {
+  width: 300px;
+}
+.homeButton {
+  padding: 0;
+  position: absolute;
+  top: 43px;
+  left: 62px;
+}
+.homeButton:hover {
+  background-color: lightgray;
+  border-radius: 50%;
+  border: 3px solid lightgray;
 }

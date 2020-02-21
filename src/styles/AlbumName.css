@@ -18,18 +18,19 @@
 .sidebar {
   width: 120px;
   text-align: center;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
 }
 .sidebar .albumNums {
   margin: 0;
   padding-top: 35px;
 }
+.albumGroups {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
 .picDisplay {
   flex-grow: 2;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-items: space-between;
   border-right: 1px solid black;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
@@ -40,12 +41,19 @@
 .picDisplay img {
   border-bottom: 1px solid black;
   padding: 0;
+  height: 150px;
+  width: 250px;
+  align-items: center;
 }
+.picDisplay a {
+  padding-left: 12px;
+}
+
 .picDisplay .photos {
-  justify-self: center;
   border: 1px solid black;
 }
 .photos {
   text-align: center;
   padding: 0;
+  width: 251px;
 }
