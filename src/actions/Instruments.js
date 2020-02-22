@@ -44,3 +44,15 @@ export function getPicture(id) {
       })
   })
 }
+export function getPictures() {
+  return new Promise((resolve, reject) => {
+    axios
+      .get("/pictures")
+      .then(resp => {
+        resolve(resp.data)
+      })
+      .catch(e => {
+        reject()
+      })
+  })
+}

@@ -11,6 +11,7 @@ export default function(props) {
   useEffect(() => {
     getInstrument(props.match.params.id).then(instrument => {
       setInstrument(instrument)
+
       setPictures(instrument.pictures)
     })
     getInstruments().then(data => setInstruments(data))
@@ -23,7 +24,7 @@ export default function(props) {
         <div className="albumGroups">
           {instruments.map(instrument => {
             return (
-              <div className="sidebar">
+              <div className="sidebar" key={"instrument" + instrument.id}>
                 <Link to={"/album/" + instrument.id}>
                   <p className="albumNums">{instrument.name}</p>
                 </Link>
@@ -35,9 +36,9 @@ export default function(props) {
         <div className="picDisplay">
           {pictures.map(picture => {
             return (
-              <Link to={"/pic/" + picture.id}>
-                <div key={"picture" + picture.id} className="photos">
-                  <img src={picture.url} />
+              <Link to={"/pic/" + picture.id} key={"picture" + picture.id}>
+                <div className="photos">
+                  <img src={picture.url} alt="moreInstruments" />
                   <p>{picture.name}</p>
                 </div>
               </Link>
