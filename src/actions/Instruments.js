@@ -1,11 +1,5 @@
 import axios from "axios"
 
-// function fetchInstruments() {
-//   axios.get("/instruments").then(resp => {
-//     setInstruments(resp.data)
-//   })
-// }
-
 export function getInstruments() {
   return new Promise((resolve, reject) => {
     axios

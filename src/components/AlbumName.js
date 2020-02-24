@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import "../styles/AlbumName.css"
 import { getInstrument, getInstruments } from "../actions/Instruments"
+import { IoMdHome } from "react-icons/io"
 
 export default function(props) {
   const [instrument, setInstrument] = useState({})
@@ -17,6 +18,8 @@ export default function(props) {
     getInstruments().then(data => setInstruments(data))
   }, [props.match.params])
 
+  // console.log(pictures)
+
   return (
     <div className="wrapperAlbumName">
       <header>{instrument.name}</header>
@@ -27,6 +30,9 @@ export default function(props) {
               <div className="sidebar" key={"instrument" + instrument.id}>
                 <Link to={"/album/" + instrument.id}>
                   <p className="albumNums">{instrument.name}</p>
+                </Link>
+                <Link to="/">
+                  <IoMdHome className="sideBarHome" />
                 </Link>
               </div>
             )
