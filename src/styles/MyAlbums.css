@@ -29,6 +29,7 @@
   border-radius: 0px 0px 10px 10px;
 }
 .gridAlbums p {
+  color: darkblue;
 }
 .gridAlbums img {
   width: 250px;
@@ -37,7 +38,7 @@
 }
 .gridAlbums .covers {
   justify-self: center;
-
+  border: 3px solid lightgray;
   background-color: antiquewhite;
   border-radius: 10px;
 }

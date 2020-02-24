@@ -16,6 +16,7 @@
   background: cover;
   border-radius: 10px 10px 0px 0px;
 }
+
 .flexSect {
   display: flex;
   padding: 0;
@@ -25,6 +26,8 @@
 .sidebar {
   width: 120px;
   text-align: center;
+}
+.albumNums {
 }
 .sidebar .albumNums {
   margin: 0;
@@ -36,13 +39,16 @@
   background-size: cover;
   border-radius: 0px 0px 0px 10px;
 }
+.position {
+}
 .sideBarHome {
   padding: 0px;
-  position: absolute;
-  top: 575px;
-  left: 70px;
+
   height: 35px;
   width: 52px;
+  z-index: 10;
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
 .sideBarHome:hover {
   border-radius: 50%;
@@ -74,12 +80,13 @@
 }
 
 .picDisplay .photos {
-  border: 1px solid transparent;
+  border: 3px solid lightgray;
+  color: darkblue;
 }
 .photos {
   text-align: center;
   padding: 0;
-  width: 250px;
+  width: 256px;
   background-color: antiquewhite;
   border-radius: 10px;
 }

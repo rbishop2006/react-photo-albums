@@ -22,7 +22,13 @@ export default function(props) {
 
   return (
     <div className="wrapperAlbumName">
-      <header>{instrument.name}</header>
+      <header>
+        <Link to="/">
+          <IoMdHome className="sideBarHome" />
+        </Link>
+        {instrument.name}
+      </header>
+
       <div className="flexSect">
         <div className="albumGroups">
           {instruments.map(instrument => {
@@ -30,9 +36,6 @@ export default function(props) {
               <div className="sidebar" key={"instrument" + instrument.id}>
                 <Link to={"/album/" + instrument.id}>
                   <p className="albumNums">{instrument.name}</p>
-                </Link>
-                <Link to="/">
-                  <IoMdHome className="sideBarHome" />
                 </Link>
               </div>
             )
