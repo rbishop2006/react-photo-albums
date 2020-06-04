@@ -1,6 +1,5 @@
 {
   "name": "react-photo-albums",
-  "homepage": "https://robertbishopdev.com",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -18,8 +17,6 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "concurrently \"react-scripts start\" \"json-server -p 3001 db.json\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
